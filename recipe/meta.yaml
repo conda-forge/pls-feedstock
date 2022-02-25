@@ -1,5 +1,5 @@
 {% set name = "pls" %}
-{% set version = "1.11.0" %}
+{% set version = "1.11.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/pls-{{ version }}.tar.gz
-  sha256: dba2682ac7d764752d09bc38c771ed0849b535356e3c3a58ee7f70edf4f8b0e0
+  sha256: 1d6cf42efa4f08309deb31a574423e892f3884a03448407fbb5c117b94a17bc9
 
 build:
   entry_points:
