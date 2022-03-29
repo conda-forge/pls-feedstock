@@ -1,5 +1,5 @@
 {% set name = "pls" %}
-{% set version = "3.0.0" %}
+{% set version = "3.2.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/pls-{{ version }}.tar.gz
-  sha256: 38bcd1af47d554ca77cd10b83983cda2fe47e42a9979fe0e492cda92bd62e9d0
+  sha256: 71c5b8f693b9ed37e8342d48d95a33ca43c85816a14e6cdb42e2f580afe1d07d
 
 build:
   entry_points:
@@ -29,14 +29,18 @@ requirements:
 test:
   imports:
     - pls
+    - pls.args
     - pls.config
-    - pls.constants
     - pls.data
+    - pls.data.schema
     - pls.enums
     - pls.fs
+    - pls.globals
+    - pls.log
     - pls.models
     - pls.models.mixins
     - pls.output
+    - pls.utils
   commands:
     - pip check
     - pls --help
