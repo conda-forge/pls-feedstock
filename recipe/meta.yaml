@@ -29,7 +29,7 @@ requirements:
 test:
   imports:
     - pls
-    - pls.arg
+    - pls.args
     - pls.config
     - pls.data
     - pls.data.schema
