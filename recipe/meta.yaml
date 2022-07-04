@@ -12,6 +12,7 @@ source:
 build:
   entry_points:
     - pls = pls.main:main
+    - pls-dev = pls.main:dev
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
   number: 0
@@ -25,7 +26,7 @@ requirements:
     - python >=3.8,<4.0
     - pyyaml >=6.0,<7.0
     - requests >=2.27.1
-    - rich >=12.0.0,<13.0.0
+    - rich >=12.4.3,<13.0.0
 
 test:
   imports:
@@ -46,6 +47,7 @@ test:
   commands:
     - pip check
     - pls --help
+    - pls-dev --help
   requires:
     - pip
 
