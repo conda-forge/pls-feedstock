@@ -1,5 +1,5 @@
 {% set name = "pls" %}
-{% set version = "5.1.2" %}
+{% set version = "5.2.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,11 +7,12 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/pls-{{ version }}.tar.gz
-  sha256: 65eb09b86af478f1fe97ea54ed607645b235a7284edd20a9fc08ab7ef63f7d9c
+  sha256: fec98dce518c920e975641061c7f2dbb1d5d182120631777aadb1a0af19f2d8d
 
 build:
   entry_points:
     - pls = pls.main:main
+    - pls-dev = pls.main:dev
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
   number: 0
@@ -25,7 +26,7 @@ requirements:
     - python >=3.8,<4.0
     - pyyaml >=6.0,<7.0
     - requests >=2.27.1
-    - rich >=12.0.0,<13.0.0
+    - rich >=12.4.3,<13.0.0
 
 test:
   imports:
@@ -46,6 +47,7 @@ test:
   commands:
     - pip check
     - pls --help
+    - pls-dev --help
   requires:
     - pip
 
